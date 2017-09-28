@@ -9,29 +9,70 @@
     .child {
         width: 20%;
         padding: 20px;
+        box-sizing: border-box;
         background: lemonchiffon;
-    }
-
-    #margin-auto-method .child {
-        margin: 0 auto;
     }
 </style>
 
 <h3>Problem description</h3>
-Horizontally center a child element inside a parent. Both child and parent has no fixed width.
+Horizontally center a child element inside a parent.
 
-<h3>1. "margin: auto" method</h3>
+<h3>"margin: auto" method</h3>
+<style>
+    #margin-auto-method .child {
+        margin: 0 auto;
+    }
+</style>
 <div id="margin-auto-method">
     <div class="parent">
-        <div class="child"></div>
+        <div class="child">Child</div>
     </div>
 </div>
 
-<h3>2. Absolute positioning method</h3>
+<h3>Absolute positioning method</h3>
+<p>* You need to know width of child element</p>
+<style>
+    #position-absolute-method .parent {
+        position: relative;
+        height: 100px;
+    }
+    #position-absolute-method .child {
+        position: absolute;
+        left: 50%;
+        margin-left: -10%;
+    }
+</style>
 <div id="position-absolute-method">
     <div class="parent">
-        <div class="child"></div>
+        <div class="child">Child</div>
     </div>
 </div>
 
-<h3>3. Inline-block method</h3>
+<h3>Inline-block method</h3>
+<style>
+    #inline-block-method .parent {
+        text-align: center;
+    }
+    #inline-block-method .child {
+        display: inline-block;
+        text-align: left;
+    }
+</style>
+<div id="inline-block-method">
+    <div class="parent">
+        <div class="child">Child</div>
+    </div>
+</div>
+
+<h3>Flexbox method</h3>
+<style>
+    #flexbox-method .parent {
+        display: flex;
+        justify-content: center;
+    }
+</style>
+<div id="flexbox-method">
+    <div class="parent">
+        <div class="child">Child</div>
+    </div>
+</div>
