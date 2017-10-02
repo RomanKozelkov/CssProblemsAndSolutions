@@ -1,46 +1,56 @@
-<style>
-    .parent {
-        width: 100%;
-        padding: 20px;
-        background: aqua;
-        box-sizing: border-box;
-    }
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Horizontal centering</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <style>
+        .parent {
+            width: 100%;
+            padding: 20px;
+            background: #212529;
+            box-sizing: border-box;
+        }
 
-    .child {
-        width: 20%;
-        padding: 20px;
-        box-sizing: border-box;
-        background: lemonchiffon;
-    }
+        .child {
+            width: 20%;
+            padding: 20px;
+            box-sizing: border-box;
+            background: #f8f9fa;
+        }
 
-    #margin-auto-method .child {
-        margin: 0 auto;
-    }
+        #margin-auto-method .child {
+            margin: 0 auto;
+        }
 
-    #position-absolute-method .parent {
-        position: relative;
-        height: 100px;
-    }
-    #position-absolute-method .child {
-        position: absolute;
-        left: 50%;
-        margin-left: -10%;
-    }
+        #position-absolute-method .parent {
+            position: relative;
+            height: 100px;
+        }
+        #position-absolute-method .child {
+            position: absolute;
+            left: 50%;
+            margin-left: -10%;
+        }
 
-    #inline-block-method .parent {
-        text-align: center;
-    }
-    #inline-block-method .child {
-        display: inline-block;
-        text-align: left;
-    }
+        #inline-block-method .parent {
+            text-align: center;
+        }
+        #inline-block-method .child {
+            display: inline-block;
+            text-align: left;
+        }
 
-    #flexbox-method .parent {
-        display: flex;
-        justify-content: center;
-    }
-</style>
-<div style="max-width: 1200px; margin: 0 auto; padding: 5px 20px;">
+        #flexbox-method .parent {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container" style="padding: 20px;">
     <h3>Horizontal centering </h3>
     <p>Main styles</p>
     <pre>
@@ -122,3 +132,5 @@
         </div>
     </div>
 </div>
+</body>
+</html>
