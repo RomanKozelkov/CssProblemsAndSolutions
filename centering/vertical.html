@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Horizontal centering</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <style>
+        .parent {
+            width: 100%;
+            background: #212529;
+            box-sizing: border-box;
+            height: 160px;
+        }
+
+        .child {
+            margin: 0 auto;
+            width: 20%;
+        }
+        .child-content {
+            padding: 20px;
+            box-sizing: border-box;
+            background: #f8f9fa;
+        }
+
+        /* EQUAL PADDING METHOD */
+        #padding-method .parent {
+            padding: 48px;
+        }
+
+        /* LINE-HEIGHT METHOD */
+        #line-height-method .child {
+            line-height: 160px;
+            vertical-align: middle;
+        }
+        #line-height-method .child-content {
+            line-height: 1.5; /*reset line-height*/
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        /* CSS TABLE METHOD */
+        #css-table-method .parent {
+            display: table;
+        }
+        #css-table-method .child {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+        #css-table-method .child-content {
+            display: inline-block;
+        }
+
+        /* FLEXBOX METHOD */
+        #flexbox-method .parent {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* GRID METHOD */
+        #grid-method .parent {
+            display: grid;
+        }
+        #grid-method .child {
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="container" style="padding: 20px;">
+    <h1>Vertical centering</h1>
+    <p>Main styles</p>
+    <pre>
+    .parent {
+        width: 100%;
+        background: #212529;
+        box-sizing: border-box;
+        height: 160px;
+    }
+
+    .child {
+        width: 20%;
+        margin: 0 auto;
+    }
+    .child-content {
+        padding: 20px;
+        box-sizing: border-box;
+        background: #f8f9fa;
+    }
+    </pre>
+
+    <div class="example">
+        <h3>Equal Top and Bottom Padding</h3>
+        <p>If height of parent and child elements is known.</p>
+        <pre>
+#padding-method .parent {
+    padding: 48px; /* 160px (parent) - 64px (child) / 2 */
+}
+        </pre>
+        <div id="padding-method">
+            <div class="parent">
+                <div class="child"><div class="child-content">Child</div></div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="example">
+        <h3 class="text-warning">Using line-height</h3>
+        <p>If height of parent element is known</p>
+        <pre>
+
+        </pre>
+        <div id="line-height-method">
+            <div class="parent">
+                <div class="child"><div class="child-content">Child</div></div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="example">
+        <h3>CSS Table Method</h3>
+        <pre>
+#css-table-method .parent {
+    display: table;
+}
+#css-table-method .child {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+#css-table-method .child-content {
+    display: inline-block;
+}
+        </pre>
+        <div id="css-table-method">
+            <div class="parent">
+                <div class="child"><div class="child-content">Child</div></div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="example">
+        <h3 class="text-warning">Absolute Positioning and Negative Margin</h3>
+        <pre>
+    
+        </pre>
+        <div id="line-height-method">
+            <div class="parent">
+                <div class="child"><div class="child-content">Child</div></div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="example">
+        <h3 class="text-warning">Absolute Positioning and Stretching</h3>
+        <pre>
+
+        </pre>
+        <div id="line-height-method">
+            <div class="parent">
+                <div class="child"><div class="child-content">Child</div></div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="example">
+        <h3 class="text-warning">Floater Div</h3>
+        <pre>
+            
+        </pre>
+        <div id="line-height-method">
+            <div class="parent">
+                <div class="child"><div class="child-content">Child</div></div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="example">
+        <h3>Flexbox</h3>
+        <pre>
+#flexbox-method .parent {
+    display: flex;
+    align-items: center; //vertical
+    justify-content: center; //horizontal
+}
+        </pre>
+        <div id="flexbox-method">
+            <div class="parent">
+                <div class="child"><div class="child-content">Child</div></div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="example">
+        <h3>CSS Grid</h3>
+        <pre>
+#grid-method .parent {
+    display: grid;
+}
+#grid-method .child {
+    margin: auto;
+}
+        </pre>
+        <div id="grid-method">
+            <div class="parent">
+                <div class="child"><div class="child-content">Child</div></div>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <style>
+        .center {
+            line-height: 200px;
+            height: 200px;
+            border: 3px solid green;
+            text-align: center;
+        }
+
+        /* If the text has multiple lines, add the following: */
+        .center p {
+            line-height: 1.5; /*reset line-height*/
+            display: inline-block;
+            vertical-align: middle;
+        }
+    </style>
+
+    Center Vertically - Using position & transform (or margin-top if height is fixed)
+    <style>
+        .center {
+            height: 200px;
+            position: relative;
+            border: 3px solid green;
+        }
+
+        .center p {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+
+
+    Inline-blocks method
+    <style>
+        .before {
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+
+        .inner {
+            display: inline-block;
+            vertical-align: middle;
+        }
+    </style>
+
+    <h4>Additional information</h4>
+    <div>
+        <ul>
+            <li><a href="http://vanseodesign.com/css/vertical-centering/" target="_blank">6 Methods For Vertical Centering With CSS</a></li>
+            <li><a href="https://css-tricks.com/centering-css-complete-guide/" target="_blank">Centering in CSS: A Complete Guide</a></li>
+            <li><a href="https://codepen.io/shshaw/full/gEiDt" target="_blank">Examples at codepen</a></li>
+            <li><a href="https://learn.javascript.ru/css-center" target="_blank">[Russian] Центрирование горизонтальное и вертикальное</a></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
