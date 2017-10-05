@@ -15,13 +15,14 @@
         }
 
         .child {
+            width: 120px;
             margin: 0 auto;
-            width: 20%;
         }
         .child-content {
             padding: 20px;
             box-sizing: border-box;
             background: #f8f9fa;
+            text-align: center;
         }
 
         /* EQUAL PADDING METHOD */
@@ -51,6 +52,33 @@
         }
         #css-table-method .child-content {
             display: inline-block;
+        }
+
+        /* POSITION ABSOLUTE WITH NEGATIVE METHOD */
+        #position-absolute-method .parent {
+            position: relative;
+        }
+
+        #position-absolute-method .child {
+            position: absolute;
+            /* vertical */
+            top: 50%;
+            margin-top: -32px; /* -50% of child height */
+            /* horizontal */
+            left: 50%;
+            margin-left: -60px; /* -50% of child width */
+        }
+
+        /* POSITION ABSOLUTE WITH TRANSLATION */
+        #position-absolute-translation-method .parent {
+            position: relative;
+        }
+
+        #position-absolute-translation-method .child {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
         }
 
         /* FLEXBOX METHOD */
@@ -110,10 +138,18 @@
     <hr>
 
     <div class="example">
-        <h3 class="text-warning">Using line-height</h3>
-        <p>If height of parent element is known</p>
+        <h3>Using line-height</h3>
+        <p>Height of parent element should be known</p>
         <pre>
-
+#line-height-method .child {
+    line-height: 160px;
+    vertical-align: middle;
+}
+#line-height-method .child-content {
+    line-height: 1.5; /*reset line-height*/
+    display: inline-block;
+    vertical-align: middle;
+}
         </pre>
         <div id="line-height-method">
             <div class="parent">
@@ -149,11 +185,46 @@
     <hr>
 
     <div class="example">
-        <h3 class="text-warning">Absolute Positioning and Negative Margin</h3>
+        <h3>Absolute Positioning and Negative Margin</h3>
         <pre>
-    
+#position-absolute-method .parent {
+    position: relative;
+}
+
+#position-absolute-method .child {
+    position: absolute;
+    /* vertical */
+    top: 50%;
+    margin-top: -32px; /* -50% of child height */
+    /* horizontal */
+    left: 50%;
+    margin-left: -60px; /* -50% of child width */
+}
         </pre>
-        <div id="line-height-method">
+        <div id="position-absolute-method">
+            <div class="parent">
+                <div class="child"><div class="child-content">Child</div></div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="example">
+        <h3>Absolute Positioning and Translation</h3>
+        <pre>
+#position-absolute-translation-method .parent {
+    position: relative;
+}
+
+#position-absolute-translation-method .child {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+        </pre>
+        <div id="position-absolute-translation-method">
             <div class="parent">
                 <div class="child"><div class="child-content">Child</div></div>
             </div>
@@ -167,7 +238,7 @@
         <pre>
 
         </pre>
-        <div id="line-height-method">
+        <div id="position-absolute-stretch-method">
             <div class="parent">
                 <div class="child"><div class="child-content">Child</div></div>
             </div>
@@ -181,7 +252,7 @@
         <pre>
             
         </pre>
-        <div id="line-height-method">
+        <div id="floater-div-method">
             <div class="parent">
                 <div class="child"><div class="child-content">Child</div></div>
             </div>
